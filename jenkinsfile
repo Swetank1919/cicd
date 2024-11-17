@@ -1,0 +1,38 @@
+pipeline {
+    agent any  // This defines that the pipeline can run on any available agent (node)
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building the project...'
+                // Example build step, replace with actual build commands
+                sh 'echo "Building the application"'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Running tests...'
+                // Example test step, replace with actual test commands
+                sh 'echo "Running tests"'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deploying the project...'
+                // Example deploy step, replace with actual deployment commands
+                sh 'echo "Deploying the application"'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Pipeline completed successfully!'
+        }
+        failure {
+            echo 'Pipeline failed.'
+        }
+    }
+}
